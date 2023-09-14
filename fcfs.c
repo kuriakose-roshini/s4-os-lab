@@ -15,9 +15,9 @@ int main()
     printf("\n FCFS Algorithm");
     WT_TAT(&FCFS_tat,&FCFS_wt);
     printf("\n\nTotal turn Around time:%d",FCFS_tat);
-    printf("\n\nAverage Total turn Around time:%d",FCFS_tat/n);
+    printf("\n\nAverage turn Around time:%d",FCFS_tat/n);
     printf("\n\nTotal waiting time:%d",FCFS_wt);
-    printf("\n\nAvearge Total waiting time:%d",FCFS_wt/n);
+    printf("\n\nAvearge waiting time:%d",FCFS_wt/n);
 }
 
 int WT_TAT(int *a, int*b)
@@ -42,7 +42,7 @@ int WT_TAT(int *a, int*b)
         tot_wt=tot_wt+wt[i];
     }
     *b=tot_wt;
-    printf("\nProcess\tBurst time\tturn around time\twaiting time");
+    printf("\nProcess\t\tBurst time\tturn around time\twaiting time");
     for(int i=0;i<n;i++)
     {
         printf("\nprocess[%d]\t\t%d\t\t%d\t\t%d",p[i],bt[i],tat[i],wt[i]);
