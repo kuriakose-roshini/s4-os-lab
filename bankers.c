@@ -40,7 +40,7 @@ int main()
     int need[n][m];
     for(i=0;i<n;i++)
     {
-        for(j=0;j<n;j++)
+        for(j=0;j<m;j++)
         {
             need[i][j]=max[i][j]-alloc[i][j];
         }
@@ -69,25 +69,27 @@ int main()
                     for(y=0;y<m;y++)
                     {
                         avail[y]=avail[y]+alloc[i][y];
-                        f[i]=1;
+                        
                     }
+                    f[i]=1;
                 }
             }
         }
-
-        int flag=1;
-        for(i=0;i<n;i++)
-        {
-            if(flag==0)
+    }
+    int flag=1;
+    for(i=0;i<n;i++)
+    {
+            if(f[i]==0)
             {
-                flag=0;
                 printf("the following system is unsafe\n");
+                flag=0;
+                
                 break;
             }
-        }
+    }
 
-        if(flag==1)
-        {
+    if(flag==1)
+    {
             printf("the following system is safe\n");
             for(i=0;i<n-1;i++)
             {
@@ -95,7 +97,9 @@ int main()
             }
             printf("P%d",ans[n-1]);
             printf("\n");
-        }
     }
+
+        
+    
 
 }
